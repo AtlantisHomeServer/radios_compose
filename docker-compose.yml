@@ -5,7 +5,8 @@ mysql:
     - 3306:3306
   volumes:
     - ./sql:/root/
-    - ./mysql:/var/lib/mysql
+## Add mysql database folder
+##    - ./mysql:/var/lib/mysql
   environment:
     - MYSQL_ROOT_PASSWORD=init123!!
     - MYSQL_DATABASE=ejabberd
@@ -25,13 +26,10 @@ ejabberd:
     - EJABBERD_USERS=admin@localhost:init123!! ktz@localhost:init123!!
     - EJABBERD_HTTPS=false
     - EJABBERD_STARTTLS=false
-    - EJABBERD_AUTH_METHOD=external
-    - EJABBERD_EXTAUTH_PROGRAM=/opt/ejabberd/scripts/lib/auth_mysql.py
-    - AUTH_MYSQL_HOST=mysql
-    - AUTH_MYSQL_USER=root
-    - AUTH_MYSQL_PASSWORD=init123!!
-    - AUTH_MYSQL_DATABASE=ejabberd
-    - AUTH_MYSQL_QUERY_GETPASS=SELECT password FROM users WHERE username = CONCAT(%(user)s, '@', %(host)s)
-    - AUTH_MYSQL_QUERY_SETPASS=UPDATE users SET password = %(password)s WHERE username = CONCAT(%(user)s, '@', %(host)s)
-    - AUTH_MYSQL_QUERY_REGISTER=INSERT INTO users ( username, password ) VALUES ( CONCAT(%(user)s, '@', %(host)s), %(password)s )
-    - AUTH_MYSQL_QUERY_UNREGISTER=DELETE FROM users WHERE username = CONCAT(%(user)s, '@', %(host)s)
+    - EJABBERD_AUTH_METHOD=sql
+    - EJABBERD_CONFIGURE_ODBC=true
+    - EJABBERD_ODBC_TYPE=mysql
+    - EJABBERD_ODBC_SERVER=mysql
+    - EJABBERD_ODBC_DATABASE=ejabberd
+    - EJABBERD_ODBC_USERNAME=root
+    - EJABBERD_ODBC_PASSWORD=init123!!
