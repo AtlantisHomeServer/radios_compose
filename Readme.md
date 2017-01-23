@@ -6,6 +6,7 @@
 ### How To
 just type
 ```bash
+$ docker rm ejabberd hadoop
 $ docker-compose up -d
 ```
 
