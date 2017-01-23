@@ -26,6 +26,7 @@ ejabberd:
     - EJABBERD_HTTPS=false
     - EJABBERD_STARTTLS=false
     - EJABBERD_AUTH_METHOD=sql
+    - EJABBERD_CONFIGURE_ODBC=true
     - EJABBERD_ODBC_TYPE=mysql
     - EJABBERD_ODBC_SERVER=mysql
     - EJABBERD_ODBC_DATABASE=ejabberd
