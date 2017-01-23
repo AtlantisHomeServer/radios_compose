@@ -5,7 +5,8 @@ mysql:
     - 3306:3306
   volumes:
     - ./sql:/root/
-#    - ./mysql:/var/lib/mysql
+## Add mysql database folder
+##    - ./mysql:/var/lib/mysql
   environment:
     - MYSQL_ROOT_PASSWORD=init123!!
     - MYSQL_DATABASE=ejabberd
