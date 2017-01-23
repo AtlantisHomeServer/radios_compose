@@ -13,4 +13,5 @@ $ sh ./start-ejabberd.sh
 go to [admin Page](http://localhost:5280/admin)
 
 id: root@localhost
+
 pw: 123
