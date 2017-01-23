@@ -10,6 +10,8 @@ mysql:
   environment:
     - MYSQL_ROOT_PASSWORD=init123!!
     - MYSQL_DATABASE=ejabberd
+  command:
+    - mysql ejabberd < /root/sql/mysql.sql
 ejabberd:
   container_name: ejabberd
   image: rroemhild/ejabberd
