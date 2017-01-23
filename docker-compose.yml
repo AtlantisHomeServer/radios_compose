@@ -23,7 +23,7 @@ ejabberd:
     - ERLANG_NODE=ejabberd
     - XMPP_DOMAIN=localhost
     - EJABBERD_ADMINS=admin@localhost
-    - EJABBERD_USERS=admin@localhost:init123!! ktz@localhost:init123!!
+#    - EJABBERD_USERS=admin@localhost:init123!! ktz@localhost:init123!!
     - EJABBERD_HTTPS=false
     - EJABBERD_STARTTLS=false
     - EJABBERD_AUTH_METHOD=sql
