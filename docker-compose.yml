@@ -12,7 +12,7 @@ mysql:
     - MYSQL_DATABASE=ejabberd
 ejabberd:
   container_name: ejabberd
-  image: knightpop/atlantis_ejabberd:0.0.1
+  image: knightpop/atlantis_ejabberd:0.0.2
   ports:
     - 5222:5222
     - 5269:5269
