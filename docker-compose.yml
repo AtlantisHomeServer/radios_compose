@@ -12,7 +12,7 @@ mysql:
     - MYSQL_DATABASE=ejabberd
 ejabberd:
   container_name: ejabberd
-  image: knightpop/atlantis_ejabberd:0.0.2
+  image: knightpop/atlantis_ejabberd:0.0.3
   ports:
     - 5222:5222
     - 5269:5269
@@ -34,3 +34,4 @@ ejabberd:
     - EJABBERD_ODBC_DATABASE=ejabberd
     - EJABBERD_ODBC_USERNAME=root
     - EJABBERD_ODBC_PASSWORD=init123!!
+    - EJABBERD_LOGLEVEL=5
