@@ -1,6 +1,6 @@
 mysql:
   container_name: mysql
-  image: mysql
+  image: mysql:5.7.17
   ports:
     - 3306:3306
   volumes:
@@ -12,7 +12,7 @@ mysql:
     - MYSQL_DATABASE=ejabberd
 ejabberd:
   container_name: ejabberd
-  image: knightpop/atlantis_ejabberd:0.0.3
+  image: atlantishomeserver/atlantis_ejabberd:latest
   ports:
     - 5222:5222
     - 5269:5269
@@ -24,7 +24,6 @@ ejabberd:
     - ERLANG_NODE=ejabberd
     - XMPP_DOMAIN=localhost
     - EJABBERD_ADMINS=admin@localhost
-#    - EJABBERD_USERS=admin@localhost:init123!! ktz@localhost:init123!!
     - EJABBERD_HTTPS=false
     - EJABBERD_STARTTLS=false
     - EJABBERD_AUTH_METHOD=sql
@@ -35,3 +34,11 @@ ejabberd:
     - EJABBERD_ODBC_USERNAME=root
     - EJABBERD_ODBC_PASSWORD=init123!!
     - EJABBERD_LOGLEVEL=5
+radios:
+  container_name: radios
+  image: atlantishomeserver/radios_server:latest
+  ports:
+    - 9990:9990
+    - 8888:8888
+  links:
+    - ejabberd:ejabberd

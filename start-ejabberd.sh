@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-docker stop ejabberd mysql
-docker rm ejabberd mysql
+docker stop ejabberd mysql radios
+docker rm ejabberd mysql radios
 docker-compose up -d
 sleep 20
 docker exec mysql bash -c "mysql ejabberd < /root/mysql.sql"
