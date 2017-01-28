@@ -6,7 +6,7 @@
 ### How To
 just type
 ```bash
-$ sh ./start-ejabberd.sh
+$ sh ./radios-compose.sh
 ```
 
 ### Current Issue
@@ -25,9 +25,13 @@ $ docker exec ejabberd bash -c "ejabberdctl register admin localhost 123"
 ```
 
 
-### admin page
+### ejabberd admin page
 go to [admin Page](http://localhost:5280/admin)
 
 id: root@localhost
 
 pw: 123
+
+### radios twitter admin page
+
+go to [Twitter Admin Page](http://localhost:9990/admin)
